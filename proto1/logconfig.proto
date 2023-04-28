@@ -1,0 +1,38 @@
+package app_pkg;
+
+/*
+RFC 5424
+0       Emergency: system is unusable
+1       Alert: action must be taken immediately
+2       Critical: critical conditions
+3       Error: error conditions
+4       Warning: warning conditions
+5       Notice: normal but significant condition
+6       Informational: informational messages              
+7       Debug: debug-level messages
+*/
+
+
+message GlobalLogConfig {  
+    required int32 log_level = 1 [default = 6];
+}
+
+message SubSysLogLevel {
+    optional int32 subsys_id = 1 [default = 0];
+    optional int32 module_id = 2 [default = 0];
+    required int32 log_level = 3 [default = 6];
+}
+
+message SubSysLogConfig {
+    repeated SubSysLogLevel subsys_log_level = 1;
+} 
+
+message StdReply {
+    required int32 result = 1 [default = 0];
+}
+
+// to get a response 1 second later
+message DelayedResponse {
+    optional int32 delay = 1 [default = 1];
+}
+

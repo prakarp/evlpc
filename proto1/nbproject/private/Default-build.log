@@ -1,0 +1,9 @@
+protoc --cpp_out=protocpp logconfig.proto
+
+make -C protocpp all
+make[1]: Entering directory `/home/pj/NetBeansProjects/proto1/protocpp'
+g++ -fPIC -pedantic -Wall -Wextra -march=native -ggdb3 -pthread -I/usr/local/include    -c -o logconfig.pb.o logconfig.pb.cc
+Compilation Finished ----------------------------------------------------------
+g++ -shared -pthread -L/usr/local/lib -lprotobuf -lpthread   -o pblib.so  logconfig.pb.o 
+Linking Finished ----------------------------------------------------------
+make[1]: Leaving directory `/home/pj/NetBeansProjects/proto1/protocpp'

@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="95">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <logicalFolder name="HeaderFiles"
+                   displayName="Header Files"
+                   projectFiles="true">
+      <itemPath>appcmn1.h</itemPath>
+      <itemPath>session.h</itemPath>
+    </logicalFolder>
+    <logicalFolder name="ResourceFiles"
+                   displayName="Resource Files"
+                   projectFiles="true">
+    </logicalFolder>
+    <logicalFolder name="SourceFiles"
+                   displayName="Source Files"
+                   projectFiles="true">
+      <itemPath>appcmn1.cpp</itemPath>
+      <itemPath>pbcommon.cpp</itemPath>
+      <itemPath>session.cpp</itemPath>
+    </logicalFolder>
+    <logicalFolder name="TestFiles"
+                   displayName="Test Files"
+                   projectFiles="false"
+                   kind="TEST_LOGICAL_FOLDER">
+    </logicalFolder>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="false"
+                   kind="IMPORTANT_FILES_FOLDER">
+      <itemPath>Makefile</itemPath>
+    </logicalFolder>
+  </logicalFolder>
+  <projectmakefile>Makefile</projectmakefile>
+  <confs>
+    <conf name="Debug" type="2">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <cTool>
+          <commandlineTool>gcc</commandlineTool>
+          <incDir>
+            <pElem>/home/pj/NetBeansProjects/libutils1</pElem>
+          </incDir>
+        </cTool>
+        <ccTool>
+          <incDir>
+            <pElem>/home/pj/NetBeansProjects/libutils1</pElem>
+            <pElem>/home/pj/NetBeansProjects/libcmn2</pElem>
+            <pElem>/home/pj/NetBeansProjects/proto1/protocpp</pElem>
+          </incDir>
+        </ccTool>
+        <linkerTool>
+          <output>${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libappcmn1.${CND_DLIB_EXT}</output>
+          <commandlineTool>gcc</commandlineTool>
+          <linkerLibItems>
+            <linkerOptionItem>`pkg-config --libs libuv`</linkerOptionItem>
+            <linkerOptionItem>`pkg-config --libs protobuf`</linkerOptionItem>
+            <linkerLibProjectItem>
+              <makeArtifact PL="/home/pj/NetBeansProjects/libutils1"
+                            CT="2"
+                            CN="Debug"
+                            AC="false"
+                            BL="false"
+                            WD="/home/pj/NetBeansProjects/libutils1"
+                            BC="${MAKE}  -f Makefile CONF=Debug"
+                            CC="${MAKE}  -f Makefile CONF=Debug clean"
+                            OP="${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/liblibutils1.${CND_DLIB_EXT}">
+              </makeArtifact>
+            </linkerLibProjectItem>
+            <linkerLibProjectItem>
+              <makeArtifact PL="/home/pj/NetBeansProjects/proto1"
+                            CT="0"
+                            CN="Default"
+                            AC="true"
+                            BL="false"
+                            WD="/home/pj/NetBeansProjects/proto1"
+                            BC="${MAKE} -f Makefile"
+                            CC="${MAKE} -f Makefile clean"
+                            OP="protocpp/libpblib.so">
+              </makeArtifact>
+            </linkerLibProjectItem>
+          </linkerLibItems>
+        </linkerTool>
+      </compileType>
+      <packaging>
+        <packType>Tar</packType>
+        <packTopDir>/usr/local/</packTopDir>
+        <packFileList>
+          <packFileListElem type="File"
+                            to="${PACKAGE_TOP_DIR}lib/${OUTPUT_BASENAME}"
+                            from="${OUTPUT_PATH}"
+                            perm="644"
+                            owner="root"
+                            group="bin"/>
+          <packFileListElem type="File"
+                            to="${PACKAGE_TOP_DIR}include/appcommon.h"
+                            from="appcommon.h"
+                            perm="644"
+                            owner="root"
+                            group="bin"/>
+        </packFileList>
+      </packaging>
+      <item path="appcmn1.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="appcmn1.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="pbcommon.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="session.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="session.h" ex="false" tool="3" flavor2="0">
+      </item>
+    </conf>
+    <conf name="Release" type="2">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <cTool>
+          <developmentMode>5</developmentMode>
+        </cTool>
+        <ccTool>
+          <developmentMode>5</developmentMode>
+        </ccTool>
+        <fortranCompilerTool>
+          <developmentMode>5</developmentMode>
+        </fortranCompilerTool>
+        <asmTool>
+          <developmentMode>5</developmentMode>
+        </asmTool>
+      </compileType>
+      <item path="appcmn1.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="appcmn1.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="pbcommon.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="session.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="session.h" ex="false" tool="3" flavor2="0">
+      </item>
+    </conf>
+  </confs>
+</configurationDescriptor>

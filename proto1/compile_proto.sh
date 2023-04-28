@@ -1,0 +1,3 @@
+#!/bin/bash
+echo $0 - compiling protocol buffer files...
+protoc -I. --cpp_out=protocpp ./addressbook.proto

@@ -1,0 +1,26 @@
+package app_pkg;
+
+/*
+   DNS client configuration (needs servers and domain names)
+*/
+
+/* unused. This is required if the server supports auth */
+message DnsServer {
+    required string domain_name = 1 [default = ""];
+    required string dns_server_ip = 2 [default = ""];
+}
+
+message DnsServerConfig {
+    required bool enable_dns_client = 1 [default = false];
+    repeated DnsServer dns_servers = 2; /* order matters */
+}
+
+/*
+  actions
+  1. flush DNS cache and restart the local DNS proxy = 1
+*/
+
+message DnsClientActions {
+    required int32 action = 1 [ default = 0 ];
+}
+

@@ -1,0 +1,36 @@
+package app_pkg;
+
+/*
+   ntp_time_source
+   local = 1
+   server = 2
+*/
+
+/* unused. This is required if the server supports auth */
+message NtpKey {
+    required string key_id = 1 [default = ""];
+    required string key_algorithm = 2 [default = ""];
+    required string key_value = 3 [default = ""];
+}
+
+message NtpServer {
+    required string hostname = 1  [default = ""];
+}
+
+message NtpClientConfig {  
+    required int32 ntp_time_source = 1 [default = 1];
+    required string timezone = 2 [default = "America/Los_Angeles"];
+    required bool periodic_sync = 3 [ default = true ];
+    required int32 ntp_sync_period = 4 [ default = 60 ];  /* minutes */
+    repeated NtpServer ntp_servers = 5;  
+}
+
+message NtpServerConfig {
+    required bool run_server = 1 [default = false]; 
+}
+
+message NtpTime_rt {
+    required string timezone_lower_level = 1;
+    required int32 current_time_sw = 2;
+    required int32 current_time_hw = 3;
+}

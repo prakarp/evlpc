@@ -1,0 +1,19 @@
+package app_pkg;
+
+// this is one published item 
+// example, VLANs or 
+// if both start and end are 0, it means everything
+// all valid instances start from number 1
+message PublishedItem {  
+    required int32 item_id = 1 [default = 0];
+    optional int32 item_instance_start = 2 [ default = 0];
+    optional int32 item_instance_end = 3 [default = 0];
+}
+
+message PublishedItems {
+    repeated PublishedItem items = 1;
+}
+
+message PublishedItemsResult {
+    required int32 result = 1 [default = 0];
+}

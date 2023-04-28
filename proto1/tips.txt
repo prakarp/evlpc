@@ -1,0 +1,25 @@
+
+pj@ubuntu:~/src/gocode$ env | grep GO
+GOPATH=/home/pj/src/gocode
+pj@ubuntu:~/src/gocode$ which go
+/usr/bin/go
+pj@ubuntu:~/src/gocode$ which protoc
+/usr/local/bin/protoc
+pj@ubuntu:~/src/gocode$ 
+
+go get -u github.com/golang/protobuf/proto
+go get -u github.com/golang/protobuf/protoc-gen-go
+
+
+# needed the protoc-gen-go binary. this was installed by the go-get commnd above
+sudo ln -s /home/pj/src/gocode/bin/protoc-gen-go /usr/bin/protoc-gen-go
+
+
+next step:
+package main
+func main() {
+         println(“Hello”, “world”)
+}
+
+http://tleyden.github.io/blog/2014/12/02/getting-started-with-go-and-protocol-buffers/
+https://github.com/golang/protobuf
